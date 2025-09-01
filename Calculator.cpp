@@ -4,7 +4,7 @@ using namespace std ;
 class calculator 
 {
     private :
-        int _result = 0 ;
+        int _result ;
         string _operation ;
         int _op_num ;
     
@@ -72,5 +72,7 @@ int main ()
     calculator calculator1 ;
     
     calculator1.add(10) ;
+    calculator1.add(10) ;
+
     calculator1.print_final_result();
 }
