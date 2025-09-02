@@ -13,8 +13,6 @@ class person
 
 
     public :
-        person(){}
-        
         person(int id , string first_name , string last_name , string email , string phone_num )
         {
             _id = id;
@@ -104,7 +102,13 @@ class employee : public person
         string _department ;
     
     public :
-        
+        employee (int id , string first_name , string last_name , string email , string phone_num , int salary , string title , string department) : person( id , first_name ,  last_name , email , phone_num)
+        {
+            _salary = salary ;
+            _tilte = title ;
+            _department = department ;
+        }
+
         void set_salary(int salary) 
         {
             _salary = salary;
@@ -147,14 +151,7 @@ class employee : public person
 
 int main ()
 {
-    employee p1;
-    p1.set_first_name("ahmed") ;
-    p1.set_last_name("alnabelsi");
-    p1.set_email("ahmed@demo.com");
-    p1.set_phone("555-5555");
-    p1.set_title("Software Engineer");
-    p1.set_department("IT");
-    p1.set_salary(80000);
+    employee p1(10, "ahmed" , "alnabelsi" , "ahmed@demo.com" , "096955555" , 1500 , "back-end" , "software eng");
     p1.send_emial("job" , "wellcome to our team");
     p1.send_sms("hi");
     p1.print_info();    
