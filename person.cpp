@@ -13,7 +13,8 @@ class person
 
 
     public :
-
+        person(){}
+        
         person(int id , string first_name , string last_name , string email , string phone_num )
         {
             _id = id;
@@ -95,9 +96,65 @@ class person
         }
 };
 
+class employee : public person 
+{
+    private : 
+        int _salary ;
+        string _tilte ;
+        string _department ;
+    
+    public :
+        
+        void set_salary(int salary) 
+        {
+            _salary = salary;
+        }
+
+        int get_salary() 
+        {
+            return _salary;
+        }
+        
+        void set_title(string title) 
+        {
+            _tilte = title;
+        }
+        
+        string get_title() 
+        {
+            return _tilte;
+        }
+        
+        void set_department(string department)
+        {
+            _department = department;
+        }
+        
+        string get_department()
+        {
+            return _department;
+        }
+        
+        void print_info() 
+        {
+            person::print_info();
+            cout << "Salary: " << _salary << endl;
+            cout << "Title: " << _tilte << endl;
+            cout << "Department: " << _department << endl;
+        }
+};
+
+
 int main ()
 {
-    person p1(10 , "ahmed" , "alnabelsi" , "ahmed@gmail.com" , "0969....") ;
+    employee p1;
+    p1.set_first_name("ahmed") ;
+    p1.set_last_name("alnabelsi");
+    p1.set_email("ahmed@demo.com");
+    p1.set_phone("555-5555");
+    p1.set_title("Software Engineer");
+    p1.set_department("IT");
+    p1.set_salary(80000);
     p1.send_emial("job" , "wellcome to our team");
     p1.send_sms("hi");
     p1.print_info();    
