@@ -2,11 +2,13 @@
 #include <string> // Include for std::string
 #include <stdexcept> // Include for std::runtime_error
 
+using namespace std ;
+
 class calculator 
 {
     private :
         int _result ;
-        std::string _operation ;
+        string _operation ;
         int _op_num ;
     
     
@@ -34,7 +36,7 @@ class calculator
             if (num == 0)
             {
                 // Handle division by zero gracefully
-                std::cerr << "Error: Division by zero is not allowed." << std::endl;
+                cerr << "Error: Division by zero is not allowed." << std::endl;
                 // Or throw an exception
                 // throw std::runtime_error("Division by zero");
                 return; // Do not perform the operation
@@ -62,11 +64,11 @@ class calculator
         {
             if (_operation == "Clear")
             {
-                std::cout << "Result after " << _operation << " is: " << _result << std::endl;
+                cout << "Result after " << _operation << " is: " << _result << std::endl;
             }
             else
             {
-                std::cout << "Result after " << _operation << " " << _op_num << " is: " << _result << std::endl;
+                cout << "Result after " << _operation << " " << _op_num << " is: " << _result << std::endl;
             }
         }
 
