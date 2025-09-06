@@ -4,18 +4,28 @@
 
 using namespace std ;
 
+/**
+ * @class calculator
+ * @brief A simple calculator class supporting basic arithmetic operations.
+ */
 class calculator 
 {
     private :
-        int _result ;
-        string _operation ;
-        int _op_num ;
+        int _result ;           /**< Stores the current result of calculations. */
+        string _operation ;     /**< Stores the last operation performed. */
+        int _op_num ;           /**< Stores the operand used in the last operation. */
     
     
     public :
-        // Constructor to initialize member variables
+        /**
+         * @brief Constructor to initialize member variables.
+         */
         calculator() : _result(0), _operation("clear"), _op_num(0) {}
 
+        /**
+         * @brief Adds a number to the current result.
+         * @param num The number to add.
+         */
         void add(int num)
         {
             _op_num = num ;
@@ -24,6 +34,10 @@ class calculator
         }
 
 
+        /**
+         * @brief Subtracts a number from the current result.
+         * @param num The number to subtract.
+         */
         void sub(int num)
         {
             _op_num = num ;
@@ -31,6 +45,11 @@ class calculator
             _result -= num ;
         }
 
+        /**
+         * @brief Divides the current result by a number.
+         * @param num The number to divide by.
+         * @note Division by zero is handled gracefully.
+         */
         void div(int num)
         {
             if (num == 0)
@@ -46,6 +65,10 @@ class calculator
             _result /= num ;
         }
 
+        /**
+         * @brief Multiplies the current result by a number.
+         * @param num The number to multiply by.
+         */
         void mul(int num)
         {
             _op_num = num ;
@@ -53,6 +76,9 @@ class calculator
             _result *= num ;
         }
 
+        /**
+         * @brief Clears the calculator state, resetting the result and operation.
+         */
         void clear ()
         {
             _operation = "Clear" ;
@@ -60,6 +86,9 @@ class calculator
             _op_num = 0;
         }
 
+        /**
+         * @brief Prints the result after the last operation.
+         */
         void print_final_result ()
         {
             if (_operation == "Clear")
@@ -72,6 +101,10 @@ class calculator
             }
         }
 
+        /**
+         * @brief Gets the current result.
+         * @return The current result as an integer.
+         */
         int get_final_result ()
         {
             return _result ;
@@ -79,6 +112,10 @@ class calculator
 
 };
 
+/**
+ * @brief Main function demonstrating usage of the calculator class.
+ * @return int Returns 0 on success.
+ */
 int main ()
 {
     calculator calculator1 ;
